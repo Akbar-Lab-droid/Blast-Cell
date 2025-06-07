@@ -4,117 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blast Cell - Layanan Digital</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0052cc, #00c853);
-            color: #fff;
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        header {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.15);
-            font-size: 26px;
-            font-weight: 600;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            margin: 15px;
-            width: 320px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 12px 24px;
-            background-color: #ffcc00;
-            color: #000;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .button:hover {
-            background-color: #ff9900;
-            transform: translateY(-5px);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    🚀 Blast Cell - Layanan Digital Modern 🚀
+    <h1>🚀 Blast Cell - Layanan Digital 🚀</h1>
+    <nav>
+        <ul>
+            <li><a href="pulsa.html">Pulsa & Kuota</a></li>
+            <li><a href="bank.html">Transfer Bank</a></li>
+            <li><a href="crypto.html">Tukar Crypto</a></li>
+            <li><a href="tagihan.html">Bayar Tagihan</a></li>
+            <li><a href="wallet.html">E-Wallet</a></li>
+            <li><a href="jasa.html">Jasa Website & AI</a></li>
+        </ul>
+    </nav>
 </header>
 
-<div class="container">
-    <div class="card">
-        <h2>Pulsa & Kuota</h2>
-        <p>Beli pulsa dan kuota untuk semua operator.</p>
-        <a href="https://wa.me/+628978691600?text=Saya%20ingin%20beli%20Pulsa%20atau%20Kuota" class="button">Beli Sekarang</a>
-    </div>
+<section class="hero">
+    <h2>Semua layanan digital terbaik ada di Blast Cell!</h2>
+    <p>Pulsa, kuota, transfer bank, tukar crypto, bayar tagihan, dan banyak lagi.</p>
+    <a href="#layanan" class="button">Jelajahi Layanan</a>
+</section>
 
+<section id="layanan">
     <div class="card">
-        <h2>Transfer Antar Bank</h2>
+        <h3>Pulsa & Kuota</h3>
+        <p>Beli pulsa dan kuota dengan cepat.</p>
+        <a href="https://wa.me/08978691600?text=Saya%20ingin%20beli%20Pulsa%20atau%20Kuota" class="button">Beli Sekarang</a>
+    </div>
+    <div class="card">
+        <h3>Transfer Bank</h3>
         <p>Transfer uang ke semua bank dengan mudah.</p>
         <a href="https://wa.me/08978691600?text=Saya%20ingin%20Transfer%20Antar%20Bank" class="button">Transfer</a>
     </div>
+</section>
 
-    <div class="card">
-        <h2>Tukar Uang & Crypto</h2>
-        <p>Tukar uang dollar atau crypto ke rupiah dengan harga terbaik.</p>
-        <a href="https://wa.me/08978691600?text=Saya%20ingin%20Tukar%20Uang%20atau%20Crypto" class="button">Tukar Sekarang</a>
-    </div>
+<footer>
+    <p>&copy; 2025 Blast Cell - Semua layanan digital dalam satu tempat</p>
+</footer>
 
-    <div class="card">
-        <h2>Bayar Tagihan</h2>
-        <p>Bayar tagihan PDAM, listrik, Wi-Fi, dan BPJS.</p>
-        <a href="https://wa.me/08978691600?text=Saya%20ingin%20Bayar%20Tagihan" class="button">Bayar Sekarang</a>
-    </div>
-
-    <div class="card">
-        <h2>Kirim Antar E-Wallet</h2>
-        <p>Kirim saldo ke Dana, GoPay, ShopeePay.</p>
-        <a href="https://wa.me/08978691600?text=Saya%20ingin%20Kirim%20Saldo%20E-Wallet" class="button">Kirim Sekarang</a>
-    </div>
-
-    <div class="card">
-        <h2>Jasa Pembuatan Website & AI</h2>
-        <p>Kami siap membantu pembuatan website dan AI sesuai kebutuhan.</p>
-        <a href="https://wa.me/08978691600?text=Saya%20ingin%20Jasa%20Pembuatan%20Website%20atau%20AI" class="button">Pesan Sekarang</a>
-    </div>
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>

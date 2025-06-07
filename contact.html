@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak - Blast Cell</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -18,23 +19,24 @@
         <div class="hamburger">☰</div>
     </nav>
 
-    <section class="contact">
-        <h2>Hubungi Kami</h2>
-        <p>Punya pertanyaan atau ingin pesan layanan? Hubungi kami sekarang!</p>
-        <a href="https://wa.me/6281234567890?text=Halo%20Blast%20Cell,%20saya%20ingin%20konsultasi" class="btn-whatsapp" target="_blank">Chat via WhatsApp</a>
-        <form class="contact-form">
+    <section class="contact" data-aos="fade-up">
+        <h2 data-aos="zoom-in">Hubungi Kami</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Punya pertanyaan atau ingin pesan layanan? Hubungi kami sekarang!</p>
+        <a href="https://wa.me/628978691600?text=Halo%20Blast%20Cell,%20saya%20ingin%20konsultasi" class="btn-whatsapp" data-aos="zoom-in" data-aos-delay="400">Chat via WhatsApp</a>
+        <form class="contact-form glass-card" data-aos="fade-up" data-aos-delay="600">
             <input type="text" placeholder="Nama" required>
             <input type="email" placeholder="Email" required>
             <textarea placeholder="Pesan Anda" required></textarea>
-            <button type="submit" class="btn">Kirim Pesan</button>
+            <button type="submit" class="btn-secondary">Kirim Pesan</button>
         </form>
     </section>
 
     <footer>
         <p>© 2025 Blast Cell. All Rights Reserved.</p>
-        <p>Kontak: <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a> | Email: info@blastcell.com</p>
+        <p>Kontak: <a href="https://wa.me/628978691600" target="_blank">WhatsApp</a> | Email: info@blastcell.com</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

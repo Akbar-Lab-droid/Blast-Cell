@@ -1,1 +1,104 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blast Cell - Layanan Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0080ff, #00cc66);
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff9900;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Blast Cell - Layanan Digital Modern
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Pulsa & Kuota (ALL OPERATOR)</h2>
+        <p>Beli pulsa dan kuota dengan mudah dan cepat!</p>
+        <div class="button" onclick="order('Pulsa & Kuota')">Beli Sekarang</div>
+    </div>
+
+    <div class="card">
+        <h2>Transfer Antar Bank</h2>
+        <p>Transfer uang ke semua bank tanpa ribet.</p>
+        <div class="button" onclick="order('Transfer Bank')">Transfer</div>
+    </div>
+
+    <div class="card">
+        <h2>Tukar Uang & Crypto</h2>
+        <p>Ubah uang dollar atau crypto ke rupiah dengan harga terbaik.</p>
+        <div class="button" onclick="order('Tukar Uang & Crypto')">Tukar Sekarang</div>
+    </div>
+
+    <div class="card">
+        <h2>Bayar Tagihan</h2>
+        <p>Bayar tagihan PDAM, listrik, wifi, dan BPJS dengan mudah.</p>
+        <div class="button" onclick="order('Bayar Tagihan')">Bayar Sekarang</div>
+    </div>
+
+    <div class="card">
+        <h2>Kirim Antar E-Wallet</h2>
+        <p>Kirim saldo ke Dana, GoPay, ShopeePay tanpa ribet.</p>
+        <div class="button" onclick="order('Kirim Antar E-Wallet')">Kirim Sekarang</div>
+    </div>
+
+    <div class="card">
+        <h2>Jasa Pembuatan Website & AI</h2>
+        <p>Kami siap membantu pembuatan website dan AI sesuai kebutuhan Anda!</p>
+        <div class="button" onclick="order('Jasa Website & AI')">Pesan Sekarang</div>
+    </div>
+</div>
+
+<script>
+    function order(service) {
+        alert("Anda memilih layanan: " + service);
+    }
+</script>
+
+</body>
+</html>

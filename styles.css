@@ -19,17 +19,18 @@ body {
     align-items: center;
     padding: 20px 50px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
 }
 
-.logo {
-    font-size: 24px;
+.navbar .logo {
+    font-size: 28px;
     font-weight: 700;
     color: #F9FAFB;
 }
@@ -37,20 +38,23 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-links a {
     color: #F9FAFB;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
     font-size: 16px;
-    transition: color 0.3s, transform 0.3s;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: color 0.3s, background 0.3s, transform 0.3s;
 }
 
-.nav-links a:hover {
-    color: #F59E0B;
+.nav-links a:hover, .nav-links a.active {
+    color: #1E3A8A;
+    background: #F59E0B;
     transform: translateY(-2px);
 }
 
@@ -73,12 +77,19 @@ body {
     overflow: hidden;
 }
 
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 .hero-content {
     z-index: 1;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 60px;
     color: #F9FAFB;
     margin-bottom: 20px;
 }
@@ -91,8 +102,10 @@ body {
 }
 
 .btn-whatsapp {
-    display: inline-block;
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #10B981, #059669);
     color: #F9FAFB;
     padding: 15px 30px;
     border-radius: 50px;
@@ -117,18 +130,19 @@ body {
 
 /* Glass Morphism */
 .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .glass-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Intro Section */
@@ -181,18 +195,17 @@ body {
 }
 
 .service-detail {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.service-detail:hover {
-    transform: translateY(-5px);
+.service-detail i {
+    font-size: 40px;
+    color: #F59E0B;
+    margin-bottom: 15px;
 }
 
 .service-detail h3 {
@@ -204,6 +217,7 @@ body {
 .service-detail p {
     color: #6B7280;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
 }
 
 /* Contact Section */
@@ -241,6 +255,7 @@ body {
     backdrop-filter: blur(5px);
     color: #1E3A8A;
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
 }
 
 .contact-form textarea {
@@ -252,7 +267,7 @@ footer {
     background: linear-gradient(135deg, #1E3A8A, #F59E0B);
     color: #F9FAFB;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 footer a {
@@ -262,21 +277,37 @@ footer a {
 }
 
 footer a:hover {
-    color: #25D366;
+    color: #10B981;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
         padding: 20px;
+        text-align: center;
     }
 
     .nav-links.active {
@@ -297,5 +328,24 @@ footer a:hover {
 
     .intro, .services, .contact {
         padding: 50px 20px;
+    }
+
+    .glass-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn-whatsapp, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }

@@ -18,9 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #1E3A8A; /* Solid Navy Blue */
     position: sticky;
     top: 0;
     width: 100%;
@@ -32,7 +30,12 @@ body {
 .navbar .logo {
     font-size: 28px;
     font-weight: 700;
-    color: #F9FAFB;
+    color: #F59E0B; /* Solid Gold */
+    transition: transform 0.3s;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -42,7 +45,7 @@ body {
 }
 
 .nav-links a {
-    color: #F9FAFB;
+    color: #F9FAFB; /* Soft White */
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -54,15 +57,27 @@ body {
 
 .nav-links a:hover, .nav-links a.active {
     color: #1E3A8A;
-    background: #F59E0B;
+    background: #F59E0B; /* Gold on hover */
     transform: translateY(-2px);
 }
 
 .hamburger {
     display: none;
     font-size: 24px;
-    color: #F9FAFB;
+    color: #F9FAFB; /* Soft White */
+    background: #F59E0B; /* Solid Gold */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hamburger:hover {
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -262,6 +277,30 @@ body {
     height: 150px;
 }
 
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #10B981;
+    color: #F9FAFB;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #1E3A8A, #F59E0B);
@@ -304,8 +343,7 @@ footer a:hover {
         top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(12px);
+        background: #1E3A8A; /* Solid Navy Blue */
         padding: 20px;
         text-align: center;
     }
@@ -315,7 +353,7 @@ footer a:hover {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
     }
 
     .hero h1 {
@@ -333,9 +371,25 @@ footer a:hover {
     .glass-card {
         padding: 20px;
     }
+
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 24px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
     .hero h1 {
         font-size: 28px;
     }

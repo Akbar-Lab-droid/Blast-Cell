@@ -3,56 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layanan Blast Cell: Pulsa, Kuota, Transfer Bank, Crypto, Tagihan, E-Wallet, dan Jasa Website/AI.">
+    <meta name="keywords" content="pulsa, kuota, transfer bank, crypto, website, AI, Blast Cell">
     <title>Layanan - Blast Cell</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Blast Cell</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Layanan</a></li>
+            <li><a href="services.html" class="active">Layanan</a></li>
             <li><a href="contact.html">Kontak</a></li>
         </ul>
-        <div class="hamburger">☰</div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
     </nav>
 
     <section class="services" data-aos="fade-up">
         <h2 data-aos="zoom-in">Layanan Kami</h2>
-        <div class="service-detail" id="pulsa" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-detail glass-card" id="pulsa" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-mobile-alt"></i>
             <h3>Pulsa & Kuota (All Operator)</h3>
             <p>Isi ulang pulsa dan kuota internet untuk semua operator dengan harga terbaik.</p>
-            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20beli%20pulsa/kuota" class="btn-whatsapp">Pesan Sekarang</a>
+            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20beli%20pulsa/kuota" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
         </div>
-        <div class="service-detail" id="transfer" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-detail glass-card" id="transfer" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-exchange-alt"></i>
             <h3>Transfer Antar Bank & Tukar Uang</h3>
             <p>Transfer antar bank, tukar dolar ke rupiah, atau coin crypto ke rupiah dengan aman.</p>
-            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20transfer/tukar%20uang" class="btn-whatsapp">Pesan Sekarang</a>
+            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20transfer/tukar%20uang" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
         </div>
-        <div class="service-detail" id="tagihan" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-detail glass-card" id="tagihan" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-file-invoice"></i>
             <h3>Pembayaran Tagihan</h3>
             <p>Bayar tagihan PDAM, listrik, WiFi, dan BPJS dalam satu platform.</p>
-            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20bayar%20tagihan" class="btn-whatsapp">Pesan Sekarang</a>
+            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20bayar%20tagihan" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
         </div>
-        <div class="service-detail" id="ewallet" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-detail glass-card" id="ewallet" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-wallet"></i>
             <h3>Kirim Antar E-Wallet</h3>
             <p>Transfer saldo antar e-wallet seperti Dana, Gopay, dan ShopeePay.</p>
-            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20kirim%20saldo%20e-wallet" class="btn-whatsapp">Pesan Sekarang</a>
+            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20kirim%20saldo%20e-wallet" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
         </div>
-        <div class="service-detail" id="website" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-detail glass-card" id="website" data-aos="fade-up" data-aos-delay="500">
+            <i class="fas fa-laptop-code"></i>
             <h3>Jasa Pembuatan Website & AI</h3>
             <p>Dapatkan website profesional atau solusi AI untuk kebutuhan bisnis Anda.</p>
-            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20buat%20website/AI" class="btn-whatsapp">Pesan Sekarang</a>
+            <a href="https://wa.me/628978691600?text=Halo,%20saya%20ingin%20buat%20website/AI" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a>
         </div>
     </section>
 
     <footer>
         <p>© 2025 Blast Cell. All Rights Reserved.</p>
         <p>Kontak: <a href="https://wa.me/628978691600" target="_blank">WhatsApp</a> | Email: info@blastcell.com</p>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>

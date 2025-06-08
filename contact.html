@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Blast Cell untuk layanan pulsa, kuota, transfer, dan jasa website/AI.">
+    <meta name="keywords" content="kontak, Blast Cell, WhatsApp, layanan digital">
     <title>Kontak - Blast Cell</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -14,15 +17,17 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Layanan</a></li>
-            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="contact.html" class="active">Kontak</a></li>
         </ul>
-        <div class="hamburger">☰</div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
     </nav>
 
     <section class="contact" data-aos="fade-up">
         <h2 data-aos="zoom-in">Hubungi Kami</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Punya pertanyaan atau ingin pesan layanan? Hubungi kami sekarang!</p>
-        <a href="https://wa.me/628978691600?text=Halo%20Blast%20Cell,%20saya%20ingin%20konsultasi" class="btn-whatsapp" data-aos="zoom-in" data-aos-delay="400">Chat via WhatsApp</a>
+        <p data-aos="fade-up" data-aos-delay="200">Punya pertanyaan atau ingin pesan layanan? Kami siap membantu!</p>
+        <a href="https://wa.me/628978691600?text=Halo%20Blast%20Cell,%20saya%20ingin%20konsultasi" class="btn-whatsapp" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+        </a>
         <form class="contact-form glass-card" data-aos="fade-up" data-aos-delay="600">
             <input type="text" placeholder="Nama" required>
             <input type="email" placeholder="Email" required>
@@ -34,8 +39,13 @@
     <footer>
         <p>© 2025 Blast Cell. All Rights Reserved.</p>
         <p>Kontak: <a href="https://wa.me/628978691600" target="_blank">WhatsApp</a> | Email: info@blastcell.com</p>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>

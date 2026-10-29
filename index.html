@@ -1,64 +1,1338 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blast Cell - Solusi digital terpercaya untuk pulsa, kuota, transfer bank, crypto, dan jasa website/AI.">
-    <meta name="keywords" content="pulsa, kuota, transfer bank, crypto, website, AI, Blast Cell">
-    <meta name="author" content="Blast Cell">
-    <title>Blast Cell - Solusi Digital Modern</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pawnership — Ulasan Kucing Pastel 🐱🌈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================
+       Pawnership v4 — candy glass + extra animations
+       Catatan: tiap blok animasi ada nama keyframe-nya biar
+       gampang nyari kalau mau ngoprek. Semua warna cerah,
+       nggak ada yang gelap nyelip — udah gue cek satu-satu.
+       ========================================================== */
+
+    :root {
+      --bg: #fff5f9;
+      --ink: #2d1b3d;
+      --ink-soft: #6b5779;
+      --pink: #ff5e9c;
+      --coral: #ff8c61;
+      --purple: #9b7bff;
+      --mint: #4ee0c0;
+      --gold: #ffb800;
+      --sky: #5bb8ff;
+      --card-bg: rgba(255, 255, 255, 0.72);
+      --card-border: rgba(255, 94, 156, 0.16);
+      --radius: 26px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.55;
+      background: linear-gradient(160deg,
+        #fff5f9 0%, #fff0f7 20%, #fef4ff 45%, #eff7ff 70%, #fff7ee 100%);
+    }
+
+    /* ---------- mesh gradient latar ---------- */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 8%,  rgba(255, 94, 156, 0.28), transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(155, 123, 255, 0.25), transparent 55%),
+        radial-gradient(ellipse at 50% 95%, rgba(78, 224, 192, 0.22), transparent 55%),
+        radial-gradient(ellipse at 90% 70%, rgba(91, 184, 255, 0.18), transparent 55%),
+        radial-gradient(ellipse at 10% 70%, rgba(255, 184, 0, 0.16), transparent 55%);
+      z-index: -2;
+      animation: meshShift 24s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes meshShift {
+      0%   { transform: scale(1) rotate(0); }
+      100% { transform: scale(1.15) rotate(2deg); }
+    }
+
+    /* ---------- pola paw print halus ---------- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23ff5e9c'%3E%3Cellipse cx='30' cy='35' rx='6' ry='8'/%3E%3Cellipse cx='45' cy='28' rx='5' ry='7'/%3E%3Cellipse cx='60' cy='28' rx='5' ry='7'/%3E%3Cellipse cx='75' cy='35' rx='6' ry='8'/%3E%3Cellipse cx='52' cy='52' rx='12' ry='10'/%3E%3C/g%3E%3Cg fill='%239b7bff'%3E%3Cellipse cx='90' cy='95' rx='6' ry='8'/%3E%3Cellipse cx='105' cy='88' rx='5' ry='7'/%3E%3Cellipse cx='120' cy='88' rx='5' ry='7'/%3E%3Cellipse cx='135' cy='95' rx='6' ry='8'/%3E%3Cellipse cx='112' cy='112' rx='12' ry='10'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 180px;
+      animation: pawDrift 90s linear infinite;
+    }
+    @keyframes pawDrift {
+      from { background-position: 0 0; }
+      to   { background-position: 360px 720px; }
+    }
+
+    /* ---------- orb pastel ---------- */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+      will-change: transform;
+    }
+    .orb-1 { width: 430px; height: 430px; background: #ffb1cf; opacity: .55; top: -140px; left: -120px; animation: floatA 18s ease-in-out infinite; }
+    .orb-2 { width: 400px; height: 400px; background: #c3b0ff; opacity: .5;  bottom: -160px; right: -100px; animation: floatB 20s ease-in-out infinite; }
+    .orb-3 { width: 340px; height: 340px; background: #a5f0dc; opacity: .45; top: 35%; left: 50%; animation: floatC 22s ease-in-out infinite; }
+    .orb-4 { width: 300px; height: 300px; background: #ffd68a; opacity: .42; top: 55%; right: 6%; animation: floatA 16s ease-in-out infinite reverse; }
+
+    @keyframes floatA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(90px, 60px) scale(1.1); } }
+    @keyframes floatB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-70px, -80px) scale(.9); } }
+    @keyframes floatC { 0%,100% { transform: translate(-50%,-50%); } 33% { transform: translate(-30%,-60%); } 66% { transform: translate(-70%,-42%); } }
+
+    /* ---------- scroll progress ---------- */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      z-index: 200;
+      background: linear-gradient(90deg, var(--pink), var(--coral), var(--gold), var(--mint), var(--purple), var(--sky));
+      background-size: 300% 100%;
+      box-shadow: 0 0 12px rgba(255, 94, 156, 0.6);
+      animation: gradientSlide 4s linear infinite;
+      transition: width 0.08s linear;
+    }
+    @keyframes gradientSlide {
+      to { background-position: 300% 0; }
+    }
+
+    /* ---------- nav ---------- */
+    .nav {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      max-width: 1200px;
+      margin: 16px 20px;
+      padding: 14px 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(255, 94, 156, 0.15);
+    }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+    }
+    .logo-badge {
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--pink), var(--coral));
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 18px rgba(255, 94, 156, 0.4);
+      animation: wiggle 4s ease-in-out infinite;
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0); }
+      25%      { transform: rotate(-8deg); }
+      75%      { transform: rotate(8deg); }
+    }
+    .logo em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-tag {
+      font-size: .8rem;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      max-width: 900px;
+      margin: 70px auto 60px;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 94, 156, 0.3);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(255, 94, 156, 0.15);
+      animation: fadeUp .7s ease both;
+    }
+    .hero-eyebrow .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 12px var(--pink);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%     { opacity: .5; transform: scale(.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 5.8vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg,
+        #ff5e9c 0%, #ff8c61 22%, #ffb800 42%,
+        #4ee0c0 62%, #9b7bff 82%, #5bb8ff 100%);
+      background-size: 260% 260%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 7s ease-in-out infinite, fadeUp .9s ease both;
+    }
+    @keyframes gradientMove {
+      0%,100% { background-position: 0% 50%; }
+      50%     { background-position: 100% 50%; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 500;
+      animation: fadeUp 1.1s ease .15s both;
+    }
+
+    /* ---------- stats ---------- */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 44px;
+      flex-wrap: wrap;
+      animation: fadeUp 1.2s ease .3s both;
+    }
+    .stat { text-align: center; }
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat:nth-child(2) .stat-value {
+      background: linear-gradient(135deg, var(--coral), var(--gold));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .stat:nth-child(3) .stat-value {
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .stat-label {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-top: 6px;
+    }
+
+    /* ---------- ticker ---------- */
+    .ticker {
+      overflow: hidden;
+      padding: 20px 0;
+      margin: 55px 0 45px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+      border-top: 1px solid rgba(255, 94, 156, 0.15);
+      border-bottom: 1px solid rgba(255, 94, 156, 0.15);
+      white-space: nowrap;
+      position: relative;
+    }
+    .ticker::before,
+    .ticker::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ticker::before { left: 0; background: linear-gradient(90deg, #fff5f9, transparent); }
+    .ticker::after  { right: 0; background: linear-gradient(-90deg, #fff7ee, transparent); }
+    .ticker-track {
+      display: inline-flex;
+      animation: scroll 32s linear infinite;
+      will-change: transform;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-track span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink-soft);
+    }
+    .ticker-track span:nth-child(5n+1) { color: var(--pink); }
+    .ticker-track span:nth-child(5n+2) { color: var(--coral); }
+    .ticker-track span:nth-child(5n+3) { color: var(--purple); }
+    .ticker-track span:nth-child(5n+4) { color: var(--mint); }
+    .ticker-track span:nth-child(5n+5) { color: var(--sky); }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ---------- grid ---------- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 26px;
+      max-width: 1240px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+    }
+
+    /* ---------- kartu ---------- */
+    .card {
+      position: relative;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(48px) scale(0.94) rotateX(6deg);
+      transition:
+        opacity .7s cubic-bezier(.22,1,.36,1),
+        transform .7s cubic-bezier(.22,1,.36,1),
+        box-shadow .45s ease,
+        border-color .45s ease;
+      transition-delay: calc(var(--i, 0) * 60ms);
+      transform-style: preserve-3d;
+      will-change: transform;
+      box-shadow: 0 10px 30px rgba(255, 94, 156, 0.08);
+      isolation: isolate;
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0);
+    }
+    .card:hover {
+      border-color: rgba(255, 94, 156, 0.4);
+      box-shadow:
+        0 26px 60px rgba(255, 94, 156, 0.22),
+        0 8px 24px rgba(155, 123, 255, 0.15);
+    }
+
+    /* border conic-gradient muter pas hover */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      padding: 2px;
+      background: conic-gradient(from var(--angle, 0deg),
+        #ff5e9c, #ff8c61, #ffb800, #4ee0c0, #5bb8ff, #9b7bff, #ff5e9c);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity .4s ease;
+      animation: rotateConic 3.5s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .card:hover::before { opacity: 1; }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes rotateConic {
+      to { --angle: 360deg; }
+    }
+
+    /* gambar + skeleton shimmer */
+    .img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 260px;
+      background: #ffe4ef;
+      border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
+      /* biar parallax gambar pas hover keluar dari border */
+    }
+    .img-wrap .skeleton {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        #ffe4ef 0%, #ffd6e8 30%, #ffe4ef 60%, #ffd6e8 90%, #ffe4ef 100%);
+      background-size: 300% 100%;
+      animation: shimmer 1.4s ease-in-out infinite;
+      z-index: 1;
+      transition: opacity .4s;
+    }
+    @keyframes shimmer {
+      to { background-position: -300% 0; }
+    }
+    .img-wrap.loaded .skeleton { opacity: 0; pointer-events: none; }
+
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1s cubic-bezier(.22,1,.36,1), filter .4s;
+      filter: saturate(1.1) brightness(1.03);
+      position: relative;
+      z-index: 2;
+    }
+    .card:hover .img-wrap img {
+      transform: scale(1.1);
+      filter: saturate(1.2) brightness(1.06);
+    }
+    .img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(255, 94, 156, 0.4) 100%);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .breed-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      z-index: 4;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--purple);
+      box-shadow: 0 4px 12px rgba(155, 123, 255, 0.25);
+      animation: badgeBob 3s ease-in-out infinite;
+    }
+    @keyframes badgeBob {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-3px); }
+    }
+
+    .cat-title {
+      position: absolute;
+      bottom: 16px; left: 20px; right: 20px;
+      z-index: 4;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .cat-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: #fff;
+      text-shadow: 0 2px 14px rgba(45, 27, 61, .5), 0 1px 3px rgba(45, 27, 61, .4);
+    }
+
+    /* body kartu */
+    .card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(255, 94, 156, 0.25);
+    }
+    .rating-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .avg-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      text-shadow: 0 2px 8px rgba(255, 184, 0, .3);
+    }
+    .stars-mini {
+      color: var(--gold);
+      font-size: .9rem;
+      letter-spacing: 1px;
+    }
+    .rating-meta {
+      font-size: .72rem;
+      color: var(--ink-soft);
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.35;
+    }
+    .rating-meta .live-dot {
+      color: var(--mint);
+      filter: drop-shadow(0 0 4px var(--mint));
+      animation: pulse 2s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    /* list ulasan */
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 160px;
+      overflow-y: auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 94, 156, 0.4) transparent;
+    }
+    .reviews::-webkit-scrollbar { width: 5px; }
+    .reviews::-webkit-scrollbar-thumb {
+      background: rgba(255, 94, 156, 0.4);
+      border-radius: 10px;
+    }
+    .reviews::-webkit-scrollbar-track { background: transparent; }
+
+    .review {
+      background: linear-gradient(135deg,
+        rgba(255, 94, 156, 0.06),
+        rgba(155, 123, 255, 0.06));
+      border-left: 3px solid var(--pink);
+      border-radius: 12px;
+      padding: 10px 14px;
+      animation: slideIn .5s cubic-bezier(.22,1,.36,1) both;
+      transition: transform .25s, background .25s;
+    }
+    .review:hover {
+      transform: translateX(3px);
+      background: linear-gradient(135deg,
+        rgba(255, 94, 156, 0.1),
+        rgba(155, 123, 255, 0.1));
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-14px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+      gap: 8px;
+    }
+    .review-name {
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--ink);
+    }
+    .review-stars {
+      font-size: .7rem;
+      color: var(--gold);
+      letter-spacing: .5px;
+    }
+    .review-text {
+      font-size: .85rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      word-break: break-word;
+      font-weight: 500;
+    }
+    .empty-note {
+      font-size: .82rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      padding: 8px 0;
+      text-align: center;
+    }
+
+    /* form */
+    .form {
+      background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,240,247,.72));
+      border: 1px solid rgba(255, 255, 255, .9);
+      border-radius: 18px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+      box-shadow: 0 4px 16px rgba(255, 94, 156, 0.08);
+    }
+    .form-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--pink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .form input,
+    .form textarea {
+      width: 100%;
+      font-family: 'Quicksand', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255, 94, 156, 0.18);
+      background: rgba(255, 255, 255, .9);
+      color: var(--ink);
+      outline: none;
+      transition: border-color .25s, background .25s, box-shadow .25s;
+      resize: vertical;
+    }
+    .form input::placeholder,
+    .form textarea::placeholder { color: rgba(107, 87, 121, .5); }
+    .form input:focus,
+    .form textarea:focus {
+      border-color: var(--pink);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(255, 94, 156, 0.12);
+    }
+    .form textarea {
+      min-height: 56px;
+      max-height: 140px;
+    }
+    .form-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* bintang input */
+    .stars-input {
+      display: flex;
+      gap: 2px;
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+    .stars-input span {
+      color: rgba(155, 123, 255, 0.25);
+      transition: color .2s, text-shadow .2s,
+                  transform .25s cubic-bezier(.34,1.56,.64,1);
+      display: inline-block;
+    }
+    .stars-input span.lit {
+      color: var(--gold);
+      text-shadow: 0 0 18px rgba(255, 184, 0, .6);
+    }
+    .stars-input span.pop {
+      animation: starPop .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes starPop {
+      0%   { transform: scale(1) rotate(0); }
+      45%  { transform: scale(1.4) rotate(18deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
+    /* tombol */
+    .btn {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .3px;
+      padding: 11px 22px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(135deg, var(--pink), var(--coral));
+      box-shadow: 0 6px 20px rgba(255, 94, 156, 0.4);
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+                  box-shadow .25s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 10px 28px rgba(255, 94, 156, .6);
+    }
+    .btn:active { transform: scale(.97); }
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+      transition: left .6s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      transform: translate(-50%, -50%) scale(0);
+      animation: rippleExpand .65s ease-out;
+      pointer-events: none;
+    }
+    @keyframes rippleExpand {
+      to { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+    }
+
+    /* particle layer — semua cerah */
+    .burst-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+      background: transparent;
+    }
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      animation: burst .95s cubic-bezier(.22,1,.36,1) forwards;
+    }
+    .particle.star {
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .particle.circle { border-radius: 50%; }
+    @keyframes burst {
+      0%   { opacity: 1; transform: translate(0,0) scale(1) rotate(0); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(.15) rotate(360deg); }
+    }
+
+    /* toast — hidden default, no black dot */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      z-index: 10000;
+      padding: 13px 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ffffff, #fff5fa);
+      border: 2px solid rgba(255, 94, 156, .4);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .9rem;
+      box-shadow:
+        0 14px 40px rgba(255, 94, 156, .3),
+        0 0 0 4px rgba(255, 255, 255, .5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(30px);
+      transition:
+        opacity .35s ease,
+        transform .45s cubic-bezier(.34,1.56,.64,1),
+        visibility .35s;
+    }
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px 60px;
+      font-size: .82rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+      max-width: 1240px;
+      margin: 0 auto;
+      line-height: 1.8;
+      background: transparent;
+    }
+    footer strong { color: var(--pink); }
+    footer .sig {
+      font-family: 'Space Grotesk', sans-serif;
+      margin-top: 12px;
+      font-size: .72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* responsive */
+    @media (max-width: 560px) {
+      .nav { padding: 12px 16px; margin: 12px; }
+      .nav-tag { display: none; }
+      .logo { font-size: 1.3rem; }
+      .hero { margin: 50px auto 40px; }
+      .hero h1 { letter-spacing: -1px; }
+      .stats { gap: 26px; }
+      .stat-value { font-size: 1.6rem; }
+      .grid { grid-template-columns: 1fr; padding: 0 16px; gap: 20px; }
+      .img-wrap { height: 220px; }
+      .cat-name { font-size: 1.3rem; }
+      .toast {
+        white-space: normal;
+        text-align: center;
+        max-width: calc(100vw - 40px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">Blast Cell</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="contact.html">Kontak</a></li>
-        </ul>
-        <div class="hamburger"><i class="fas fa-bars"></i></div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" data-aos="fade-up">
-        <div id="particles-js"></div>
-        <div class="hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="200"><span class="typing-text"></span></h1>
-            <p data-aos="fade-up" data-aos-delay="400">Solusi digital terpercaya untuk semua kebutuhan Anda, dari pulsa hingga teknologi AI.</p>
-            <a href="https://wa.me/628978691600?text=Halo%20Blast%20Cell,%20saya%20ingin%20konsultasi%20layanan" class="btn-whatsapp" data-aos="zoom-in" data-aos-delay="600">
-                <i class="fab fa-whatsapp"></i> Mulai Sekarang
-            </a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-badge">🐾</span>
+      Pawn<em>ership</em>
+    </div>
+    <span class="nav-tag">warna warni · dibikin sambil ngopi ☕</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      komunitas pecinta kucing
+    </div>
+    <h1>Ulas kucingnya.<br>Bagi ceritanya.</h1>
+    <p class="hero-sub">
+      Tiap kucing punya karakter beda. Kasih rating bintang, tulis pengalamanmu,
+      dan bantu orang lain kenalan sama si bulu-bulu ini.
+    </p>
+
+    <div class="stats" id="stats">
+      <div class="stat">
+        <span class="stat-value" data-count="8">0</span>
+        <div class="stat-label">Kucing</div>
+      </div>
+      <div class="stat">
+        <span class="stat-value" data-count="16" id="statReviews">0</span>
+        <div class="stat-label">Ulasan</div>
+      </div>
+      <div class="stat">
+        <span class="stat-value" data-count="4.7">0</span>
+        <div class="stat-label">Rata-rata</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    Dibuat sambil begadang, sambil ngopi, sambil ngelus kucing. <strong>🐈</strong><br>
+    &copy; 2026 Pawnership — foto dari Unsplash &amp; Pexels.
+    <div class="sig">crafted with ☕ &amp; ✨</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <div class="burst-layer" id="burstLayer"></div>
+
+  <script>
+    /* ==========================================================
+       Data kucing — semua foto beneran kucing (bukan placeholder).
+       Ada fallback URL juga, jadi kalau salah satu 404, kartunya
+       nggak jadi kotak rusak.
+       ========================================================== */
+
+    const FALLBACK_IMG = 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=800&q=85&auto=format&fit=crop';
+
+    const cats = [
+      {
+        id: 'mochi',
+        nama: 'Mochi',
+        ras: 'Scottish Fold',
+        foto: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Rina',  rating: 5, teks: 'Paling manja, suka tidur di pangkuan. Matanya bikin luluh.' },
+          { nama: 'Dimas', rating: 4, teks: 'Cantik, tapi agak pemalu kalau ada tamu baru.' }
+        ]
+      },
+      {
+        id: 'luna',
+        nama: 'Luna',
+        ras: 'Russian Blue',
+        foto: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Sari', rating: 5, teks: 'Bulu halus, warna abu-abu elegan. Bersih banget dan tenang.' },
+          { nama: 'Budi', rating: 4, teks: 'Suka main bola kertas. Cerdas, aktif pas malam.' }
+        ]
+      },
+      {
+        id: 'kopi',
+        nama: 'Kopi',
+        ras: 'Bengal',
+        foto: 'https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Ayu',   rating: 5, teks: 'Pola bulunya kayak macan mini! Energik dan suka lompat tinggi.' },
+          { nama: 'Fajar', rating: 4, teks: 'Aktif banget, butuh banyak mainan. Tapi jinak kalau udah kenal.' }
+        ]
+      },
+      {
+        id: 'snowy',
+        nama: 'Snowy',
+        ras: 'Persian',
+        foto: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Mega',  rating: 5, teks: 'Bulu putih tebal, wajah menggemaskan. Suka dielus dagunya.' },
+          { nama: 'Rizky', rating: 4, teks: 'Kalem dan anggun. Perlu rutin disisir bulunya.' }
+        ]
+      },
+      {
+        id: 'oyen',
+        nama: 'Oyen',
+        ras: 'Domestic Shorthair',
+        foto: 'https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Tika', rating: 5, teks: 'Kucing kampung paling ramah! Suka nyapa dengan mengeong.' },
+          { nama: 'Andi', rating: 4, teks: 'Lincah, suka berburu serangga. Setia dan mudah diajak main.' }
+        ]
+      },
+      {
+        id: 'cleo',
+        nama: 'Cleo',
+        ras: 'Sphynx',
+        foto: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Nadia', rating: 5, teks: 'Unik dan sangat penyayang. Kulitnya hangat kayak beludru.' },
+          { nama: 'Yoga',  rating: 4, teks: 'Aktif dan suka cari perhatian. Perlu mandi rutin.' }
+        ]
+      },
+      {
+        id: 'tiger',
+        nama: 'Tiger',
+        ras: 'Tabby',
+        foto: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Bayu', rating: 5, teks: 'Stripes-nya rapi banget, kaya macan kecil. Ramah sama anak-anak.' },
+          { nama: 'Lina', rating: 4, teks: 'Suka main di luar, tapi selalu pulang pas sore. Manja.' }
+        ]
+      },
+      {
+        id: 'pepper',
+        nama: 'Pepper',
+        ras: 'Bombay',
+        foto: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=800&q=85&auto=format&fit=crop',
+        reviews: [
+          { nama: 'Firman', rating: 5, teks: 'Bulu hitam mengkilap, mata kuning nyala. Misterius tapi manja.' },
+          { nama: 'Sinta',  rating: 4, teks: 'Kalem dan pengamat. Suka duduk di jendela ngeliatin burung.' }
+        ]
+      }
+    ];
+
+    const reviewsData = {};
+    cats.forEach(c => { reviewsData[c.id] = c.reviews.map(r => ({ ...r })); });
+
+    const $  = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+    function starStr(n) {
+      const f = Math.round(n);
+      return '★'.repeat(f) + '☆'.repeat(5 - f);
+    }
+    function avgOf(id) {
+      const list = reviewsData[id];
+      if (!list.length) return 0;
+      return +(list.reduce((s, r) => s + r.rating, 0) / list.length).toFixed(1);
+    }
+
+    /* ticker */
+    function buildTicker() {
+      const words = ['Manja','Cerdas','Elegan','Lincah','Penyayang','Bersih','Unik','Kalem','Aktif','Menggemaskan','Fotogenik','Suka Dielus'];
+      $('#tickerTrack').innerHTML = [...words, ...words]
+        .map(w => `<span>✦ ${w}</span>`).join('');
+    }
+
+    /* bangun satu kartu */
+    function buildCard(cat, index) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.dataset.id = cat.id;
+      card.style.setProperty('--i', index);
+
+      // -- gambar + skeleton --
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'img-wrap';
+      imgWrap.innerHTML = `
+        <div class="skeleton"></div>
+        <img src="${cat.foto}" alt="Foto kucing ${cat.nama}"
+             loading="lazy" decoding="async"
+             onerror="this.onerror=null;this.src='${FALLBACK_IMG}'">
+        <span class="breed-badge">${cat.ras}</span>
+        <div class="cat-title"><h2 class="cat-name">${cat.nama}</h2></div>
+      `;
+      const img = imgWrap.querySelector('img');
+      // kalau gambar udah ada di cache, langsung tandain loaded
+      if (img.complete) imgWrap.classList.add('loaded');
+      else img.addEventListener('load', () => imgWrap.classList.add('loaded'));
+
+      card.appendChild(imgWrap);
+
+      // -- body --
+      const body = document.createElement('div');
+      body.className = 'card-body';
+
+      const ratingRow = document.createElement('div');
+      ratingRow.className = 'rating-row';
+      body.appendChild(ratingRow);
+
+      const reviewsEl = document.createElement('div');
+      reviewsEl.className = 'reviews';
+      body.appendChild(reviewsEl);
+
+      // -- form --
+      const form = document.createElement('form');
+      form.className = 'form';
+      form.innerHTML = `
+        <span class="form-label">✏️ Tulis ulasanmu</span>
+        <input type="text" name="nama" placeholder="Nama kamu..." maxlength="30" required>
+        <textarea name="teks" placeholder="Gimana karakter ${cat.nama}? Ceritain di sini..." maxlength="200" required></textarea>
+        <div class="form-actions">
+          <div class="stars-input" data-rating="0">
+            <span data-v="1">☆</span>
+            <span data-v="2">☆</span>
+            <span data-v="3">☆</span>
+            <span data-v="4">☆</span>
+            <span data-v="5">☆</span>
+          </div>
+          <button type="submit" class="btn">Kirim ✦</button>
         </div>
-    </section>
+      `;
+      body.appendChild(form);
+      card.appendChild(body);
 
-    <!-- Introduction Section -->
-    <section class="intro" data-aos="fade-up">
-        <div class="glass-card">
-            <h2 data-aos="fade-right">Mengapa Blast Cell?</h2>
-            <p data-aos="fade-left" data-aos-delay="200">Kami menyediakan layanan digital cepat, aman, dan terjangkau. Dengan teknologi modern, kami siap mendukung kebutuhan harian hingga solusi bisnis Anda.</p>
-            <a href="services.html" class="btn-secondary" data-aos="zoom-in" data-aos-delay="400">Jelajahi Layanan</a>
+      refreshCard(card, cat.id);
+
+      // --- bintang interaktif ---
+      const starsWrap = form.querySelector('.stars-input');
+      const starSpans = $$('span', starsWrap);
+      let picked = 0;
+
+      const paint = (v) => starSpans.forEach(s => s.classList.toggle('lit', +s.dataset.v <= v));
+
+      starSpans.forEach(sp => {
+        const v = +sp.dataset.v;
+        sp.addEventListener('mouseenter', () => paint(v));
+        sp.addEventListener('mouseleave', () => paint(picked));
+        sp.addEventListener('click', () => {
+          picked = v;
+          starsWrap.dataset.rating = v;
+          paint(v);
+          sp.classList.remove('pop'); void sp.offsetWidth; sp.classList.add('pop');
+        });
+      });
+
+      // --- ripple di tombol ---
+      const btn = form.querySelector('.btn');
+      btn.addEventListener('click', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const r = document.createElement('span');
+        r.className = 'ripple';
+        const size = Math.max(rect.width, rect.height);
+        r.style.width = r.style.height = size + 'px';
+        r.style.left = (e.clientX - rect.left) + 'px';
+        r.style.top  = (e.clientY - rect.top) + 'px';
+        btn.appendChild(r);
+        setTimeout(() => r.remove(), 650);
+      });
+
+      // --- submit ---
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nama = form.nama.value.trim();
+        const teks = form.teks.value.trim();
+        const rating = +starsWrap.dataset.rating;
+
+        if (!nama || !teks) return toast('Nama dan komentar jangan kosong ya 🙏');
+        if (rating < 1)     return toast('Pilih bintang dulu ⭐');
+
+        reviewsData[cat.id].push({ nama, rating, teks });
+
+        form.reset();
+        picked = 0;
+        starsWrap.dataset.rating = 0;
+        paint(0);
+
+        spawnBurst(btn);
+        toast('Ulasanmu tersimpan ✨');
+        refreshCard(card, cat.id);
+        updateStats();
+      });
+
+      return card;
+    }
+
+    /* isi ulang rating + list review */
+    function refreshCard(card, id) {
+      const list = reviewsData[id];
+      const avg = avgOf(id);
+
+      card.querySelector('.rating-row').innerHTML = `
+        <div class="rating-main">
+          <span class="avg-num">${avg.toFixed(1)}</span>
+          <span class="stars-mini">${starStr(avg)}</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Blast Cell. All Rights Reserved.</p>
-        <p>Kontak: <a href="https://wa.me/628978691600" target="_blank">WhatsApp</a> | Email: info@blastcell.com</p>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <div class="rating-meta">
+          ${list.length} ulasan<br>
+          <span class="live-dot">●</span> live
         </div>
-    </footer>
+      `;
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+      const reviewsEl = card.querySelector('.reviews');
+      if (!list.length) {
+        reviewsEl.innerHTML = `<div class="empty-note">Belum ada yang ngulas. Jadi yang pertama 👀</div>`;
+        return;
+      }
+      reviewsEl.innerHTML = list.slice().reverse().map((r, i) => `
+        <div class="review" style="animation-delay:${i * 45}ms">
+          <div class="review-top">
+            <span class="review-name">${esc(r.nama)}</span>
+            <span class="review-stars">${starStr(r.rating)}</span>
+          </div>
+          <div class="review-text">${esc(r.teks)}</div>
+        </div>
+      `).join('');
+    }
+
+    /* stats hero */
+    function updateStats() {
+      const totalReviews = Object.values(reviewsData).reduce((s, l) => s + l.length, 0);
+      const allRatings = Object.values(reviewsData).flat().map(r => r.rating);
+      const avg = allRatings.length
+        ? (allRatings.reduce((s, n) => s + n, 0) / allRatings.length).toFixed(1)
+        : '0.0';
+      animateNumber($('#statReviews'), totalReviews);
+      const vals = $$('.stat .stat-value');
+      if (vals[2]) vals[2].textContent = avg;
+    }
+
+    /* counter animasi */
+    function animateNumber(el, target) {
+      const start = parseFloat(el.textContent) || 0;
+      const dur = 700, t0 = performance.now();
+      const isFloat = !Number.isInteger(target);
+      function step(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = start + (target - start) * eased;
+        el.textContent = isFloat ? val.toFixed(1) : Math.round(val);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    /* confetti — campuran lingkaran & bintang, semua cerah */
+    function spawnBurst(sourceEl) {
+      const layer = $('#burstLayer');
+      const rect = sourceEl.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      const colors = ['#ff5e9c','#ff8c61','#9b7bff','#4ee0c0','#ffb800','#5bb8ff'];
+      const count = 30;
+
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        const isStar = i % 3 === 0;
+        p.className = 'particle ' + (isStar ? 'star' : 'circle');
+
+        const angle = (Math.PI * 2 * i) / count + Math.random() * 0.5;
+        const dist = 80 + Math.random() * 140;
+        const size = 6 + Math.random() * 8;
+
+        p.style.left = cx + 'px';
+        p.style.top  = cy + 'px';
+        p.style.width = p.style.height = size + 'px';
+        p.style.background = colors[i % colors.length];
+        p.style.boxShadow = `0 0 10px ${colors[i % colors.length]}`;
+        p.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+        p.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+        p.style.animationDelay = (Math.random() * 80) + 'ms';
+
+        layer.appendChild(p);
+        setTimeout(() => p.remove(), 1200);
+      }
+    }
+
+    /* toast */
+    let toastTimer;
+    function toast(msg) {
+      const el = $('#toast');
+      el.textContent = '🐾 ' + msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+    }
+
+    /* tilt 3D + parallax gambar */
+    function attachTilt(card) {
+      const img = card.querySelector('img');
+      const max = 6;
+      let raf = null;
+
+      card.addEventListener('mousemove', (e) => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `translateY(-8px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg)`;
+          // parallax gambar sedikit, biar berasa ada kedalaman
+          if (img) img.style.transform = `scale(1.1) translate(${(-px * 12).toFixed(1)}px, ${(-py * 12).toFixed(1)}px)`;
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = '';
+        if (img) img.style.transform = '';
+      });
+    }
+
+    /* reveal on scroll */
+    function setupReveal(cards) {
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(c => c.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      cards.forEach(c => io.observe(c));
+    }
+
+    /* scroll progress bar */
+    function setupScrollProgress() {
+      const bar = $('#scrollProgress');
+      const update = () => {
+        const h = document.documentElement;
+        const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    }
+
+    /* boot */
+    function boot() {
+      buildTicker();
+
+      const grid = $('#grid');
+      const cards = cats.map((cat, i) => {
+        const card = buildCard(cat, i);
+        grid.appendChild(card);
+        return card;
+      });
+
+      setupReveal(cards);
+      setupScrollProgress();
+
+      if (window.matchMedia('(hover: hover)').matches) {
+        cards.forEach(attachTilt);
+      }
+
+      setTimeout(() => {
+        $$('.stat .stat-value').forEach((el, idx) => {
+          if (idx === 2) return;
+          animateNumber(el, parseFloat(el.dataset.count));
+        });
+        updateStats();
+      }, 500);
+
+      console.log('%c🐾 Pawnership v4', 'font-size:20px;color:#ff5e9c;font-weight:bold');
+      console.log('%cSemua foto kucing asli. Fork kalau mau ngoprek 🌈', 'color:#9b7bff');
+    }
+
+    document.addEventListener('DOMContentLoaded', boot);
+  </script>
 </body>
 </html>
